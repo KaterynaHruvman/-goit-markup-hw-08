@@ -398,7 +398,6 @@ img {
 @media screen and (min-width: 480px) {
   .container {
     width: 480px;
-    margin: 0 auto;
   }
 }
 
@@ -492,6 +491,7 @@ header {
 
 .header-adress-tel {
   font-family: "Roboto", sans-serif;
+  text-align: center;
   font-style: normal;
   font-weight: 500;
   font-size: 18px;
@@ -502,6 +502,7 @@ header {
 
 .header-adress-mail {
   font-family: "Roboto", sans-serif;
+  text-align: center;
   font-style: normal;
   font-weight: 500;
   font-size: 18px;
@@ -526,24 +527,49 @@ header {
   border-radius: 2px;
 }
 
+/* MOBILE*/
 @media screen and (min-width: 480px) {
   .navigation {
     display: flex;
   }
 }
 
+/*mobile before TABLET*/
 @media screen and (max-width: 768px) {
   .navigation {
     margin-bottom: 60px;
   }
+  .menu-wrapper {
+    position: absolute;
+    left: 0;
+    top: 100%;
+    width: 100%;
+    text-align: center;
+    transform: translateY(-150%);
+    transition: transform 500ms linear;
+  }
+  .menu-wrapper.is-open {
+    transform: translateY(0%);
+  }
+  .header-adress {
+    text-align: center;
+  }
 }
 
+/*TABLET*/
 @media screen and (min-width: 768px) {
   .menu-wrapper {
     display: flex;
   }
   .menu-btn {
     display: none;
+  }
+  .navigation-list {
+    display: flex;
+  }
+  .navigation {
+    display: flex;
+    align-items: center;
   }
 }
 
@@ -571,50 +597,50 @@ header {
   color: #2196f3;
 }
 
-/* .navigation {
-  display: flex;
-  align-items: center;
-}
-header {
-  background: $light-text-color;
+/* DESKTOP    */
+@media screen and (min-width: 1200px) {
+  .navigation {
+    display: flex;
+    align-items: center;
+  }
 }
 
-
-}
 .flex-header {
   display: flex;
   align-items: center;
 }
+
 .header-adress {
   margin-left: auto;
 }
+
 .header-adress-item:not(:last-child) {
   margin-right: 30px;
 }
 
-
-
 .navigation-list-link.current {
-  color: $accent-color;
+  color: #2196f3;
 }
+
 .header-adress-mail,
 .header-adress-tel {
   display: flex;
   align-items: center;
-  font-family: $main-font;
+  font-family: "Roboto", sans-serif;
   font-style: normal;
-  font-weight: 500;
   font-size: 14px;
   line-height: 16px;
-  letter-spacing: 0.02em;
-  color: $main-text-color;
   transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
-  &:hover {
-    color: $accent-color;
-  }
-  &:focus {
-    color: $accent-color;
-  }
+}
+
+.header-adress-mail:hover,
+.header-adress-tel:hover {
+  color: #2196f3;
+}
+
+.header-adress-mail:focus,
+.header-adress-tel:focus {
+  color: #2196f3;
 }
 
 .navigation-list-item.studio::after {
@@ -622,24 +648,25 @@ header {
   width: 47px;
   height: 4px;
   content: "";
-  background: $accent-color;
+  background: #2196f3;
   border-radius: 2px;
 }
+
 .navigation-list-item.portfolio::after {
   display: block;
   width: 77px;
   height: 4px;
   content: "";
-  background: $accent-color;
+  background: #2196f3;
   border-radius: 2px;
 }
+
 .header-adress-mail-svg {
   margin-right: 10px;
-  fill: $second-font-color;
+  fill: #afb1b8;
   transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
- */
 /*---------------------------- MODAL WINDOW -------*/
 .backdrop {
   position: fixed;

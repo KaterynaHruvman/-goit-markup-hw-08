@@ -475,17 +475,7 @@ header {
   margin-bottom: 40px;
 }
 
-.header-adress-tel {
-  font-family: "Roboto", sans-serif;
-  text-align: center;
-  font-style: normal;
-  font-weight: 500;
-  font-size: 18px;
-  line-height: 21px;
-  letter-spacing: 0.02em;
-  color: #757575;
-}
-
+.header-adress-tel,
 .header-adress-mail {
   font-family: "Roboto", sans-serif;
   text-align: center;
@@ -998,12 +988,6 @@ header {
   }
 }
 
-.hero-title {
-  letter-spacing: 0.06em;
-  padding-top: 200px;
-  padding-bottom: 30px;
-}
-
 @media screen and (max-width: 767px) {
   .hero-title {
     font-style: normal;
@@ -1023,8 +1007,22 @@ header {
   }
 }
 
+@media screen and (max-width: 960px) {
+  .hero-title {
+    letter-spacing: 0.06em;
+    font-weight: 900;
+    font-size: 26px;
+    line-height: 42px;
+    padding-top: 200px;
+    padding-bottom: 30px;
+  }
+}
+
 @media screen and (min-width: 1200px) {
   .hero-title {
+    color: #ffffff;
+    padding-top: 200px;
+    padding-bottom: 30px;
     font-size: 44px;
     line-height: 1.36;
   }

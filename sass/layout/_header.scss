@@ -35,16 +35,7 @@ header {
 .navigation-list-item:not(:last-child) {
   margin-bottom: 40px;
 }
-.header-adress-tel {
-  font-family: $main-font;
-  text-align: center;
-  font-style: normal;
-  font-weight: 500;
-  font-size: 18px;
-  line-height: 21px;
-  letter-spacing: 0.02em;
-  color: $main-text-color;
-}
+.header-adress-tel,
 .header-adress-mail {
   font-family: $main-font;
   text-align: center;

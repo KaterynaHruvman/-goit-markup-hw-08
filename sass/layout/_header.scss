@@ -19,6 +19,11 @@ header {
   cursor: pointer;
   z-index: 100;
   height: 40px;
+  &:hover,
+  &:focus {
+    fill: $accent-color;
+  }
+
   &.is-open {
     .icon-close {
       display: block;
@@ -53,7 +58,7 @@ header {
 /* MOBILE*/
 @media screen and (min-width: 480px) {
   .navigation {
-    display: flex;
+    display: block;
   }
 }
 /*mobile before TABLET*/
@@ -62,17 +67,18 @@ header {
     padding-top: 16px;
     padding-bottom: 16px;
   }
+  .navigation {
+    display: block;
+  }
   .navigation-list {
     text-align: center;
-
-    @media screen and (max-width: 767px) {
-      margin-top: 40px;
-      margin-bottom: 40px;
-    }
-
-    @media screen and (min-width: 768px) {
-      display: flex;
-    }
+    margin-top: 40px;
+    margin-bottom: 40px;
+  }
+  .header-adress-list {
+    text-align: center;
+    padding-left: 140px;
+    padding-right: 140px;
   }
   .navigation {
     margin-bottom: 60px;
@@ -91,9 +97,7 @@ header {
       transform: translateY(0%);
     }
   }
-  .header-adress {
-    text-align: center;
-  }
+
   .navigation-list-item.studio::after {
     margin-top: 8px;
     display: block;
@@ -158,6 +162,9 @@ header {
 /* DESKTOP    */
 
 @media screen and (min-width: 1200px) {
+  .navigation {
+    margin-right: 215px;
+  }
   .navigation-list-item.portfolio::after {
     display: block;
     width: 77px;
@@ -168,6 +175,7 @@ header {
   }
   .navigation-list-item.studio::after {
     display: block;
+    width: 100%;
     width: 61px;
     height: 4px;
     content: "";
@@ -194,9 +202,6 @@ header {
 .flex-header {
   display: flex;
   align-items: center;
-}
-.header-adress {
-  margin-left: auto;
 }
 .header-adress-item:not(:last-child) {
   margin-right: 30px;

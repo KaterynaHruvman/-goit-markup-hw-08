@@ -494,7 +494,7 @@ header {
 /* MOBILE*/
 @media screen and (min-width: 480px) {
   .navigation {
-    display: flex;
+    display: block;
   }
 }
 
@@ -504,25 +504,18 @@ header {
     padding-top: 16px;
     padding-bottom: 16px;
   }
-  .navigation-list {
-    text-align: center;
+  .navigation {
+    display: block;
   }
-}
-
 @media screen and (max-width: 767px) and (max-width: 767px) {
   .navigation-list {
+    text-align: center;
     margin-top: 40px;
     margin-bottom: 40px;
   }
-}
-
-@media screen and (max-width: 767px) and (min-width: 768px) {
-  .navigation-list {
-    display: flex;
+  .header-adress-list {
+    text-align: center;
   }
-}
-
-@media screen and (max-width: 767px) {
   .navigation {
     margin-bottom: 60px;
   }
@@ -538,9 +531,6 @@ header {
   }
   .menu-wrapper.is-open {
     transform: translateY(0%);
-  }
-  .header-adress {
-    text-align: center;
   }
   .navigation-list-item.studio::after {
     margin-top: 8px;
@@ -605,6 +595,9 @@ header {
 
 /* DESKTOP    */
 @media screen and (min-width: 1200px) {
+  .navigation {
+    margin-right: 215px;
+  }
   .navigation-list-item.portfolio::after {
     display: block;
     width: 77px;
@@ -615,6 +608,7 @@ header {
   }
   .navigation-list-item.studio::after {
     display: block;
+    width: 100%;
     width: 61px;
     height: 4px;
     content: "";
@@ -644,10 +638,6 @@ header {
 .flex-header {
   display: flex;
   align-items: center;
-}
-
-.header-adress {
-  margin-left: auto;
 }
 
 .header-adress-item:not(:last-child) {
@@ -950,13 +940,13 @@ header {
 
 @media screen and (min-width: 480px) {
   .hero {
-    background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)), url(../images/Header_mobile.jpg);
+    background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(50, 57, 131, 0.4)), url(../images/Header_mobile.jpg);
   }
 }
 
-@media screen and (min-device-pixel-ratio: 2), screen and (min-resolution: 192dpi), screen and (min-resolution: 2dppx), screen and (min-width: 320px) {
+@media screen and (min-width: 480px) and (min-device-pixel-ratio: 2), screen and (min-width: 480px) and (min-resolution: 192dpi), screen and (min-width: 480px) and (min-resolution: 2dppx), screen and (min-width: 480px) and (min-width: 320px) {
   .hero {
-    background-image: url(../images/Header_mobile@2x.jpg);
+    background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)), url(../images/Header_mobile@2x.jpg);
   }
 }
 
@@ -964,11 +954,11 @@ header {
   .hero {
     height: 768px;
     max-width: 400px;
-    background-image: url(../images/Header_tablet.jpg);
+    background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)), url(../images/Header_tablet.jpg);
   }
 }
 
-@media screen and (min-device-pixel-ratio: 2), screen and (min-resolution: 192dpi), screen and (min-resolution: 2dppx), screen and (min-width: 768px) {
+@media screen and (min-width: 768px) and (min-device-pixel-ratio: 2), screen and (min-width: 768px) and (min-resolution: 192dpi), screen and (min-width: 768px) and (min-resolution: 2dppx), screen and (min-width: 768px) and (min-width: 768px) {
   .hero {
     background-image: url(../images/Header_tablet@2x.jpg);
   }
@@ -978,11 +968,11 @@ header {
   .hero {
     height: 600px;
     max-width: 1600px;
-    background-image: url(../images/Header_desktop.jpg);
+    background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)), url(../images/Header_desktop.jpg);
   }
 }
 
-@media screen and (min-device-pixel-ratio: 2), screen and (min-resolution: 192dpi), screen and (min-resolution: 2dppx), screen and (min-width: 1200px) {
+@media screen and (min-width: 1200px) and (min-device-pixel-ratio: 2), screen and (min-width: 1200px) and (min-resolution: 192dpi), screen and (min-width: 1200px) and (min-resolution: 2dppx), screen and (min-width: 1200px) and (min-width: 1200px) {
   .hero {
     background-image: url(../images/Header_desktop@2x.jpg);
   }
@@ -1004,6 +994,7 @@ header {
   .hero-title {
     font-size: 26px;
     line-height: 42px;
+    color: #ffffff;
   }
 }
 
@@ -1056,10 +1047,6 @@ header {
   padding-top: 94px;
 }
 
-.about-us-list {
-  display: flex;
-}
-
 .about-us-title {
   font-family: "Roboto", sans-serif;
   font-size: 14px;
@@ -1067,62 +1054,65 @@ header {
   letter-spacing: 0.03em;
   text-transform: uppercase;
   margin-bottom: 10px;
+  text-align: center;
+  margin-top: 30px;
+  margin-bottom: 10px;
 }
 
-.about-us-item {
-  margin-bottom: 30px;
+@media screen and (max-width: 767px) {
+  .about-us-item:not(:last-child) {
+    margin-bottom: 30px;
+  }
 }
 
-.about-us-item:not(:last-child) {
-  margin-right: 30px;
-}
-
-.about-us-item.svg1::before {
-  display: inline-block;
+.about-us-item::before {
   content: "";
-  width: 270px;
+  display: block;
   height: 120px;
-  margin-bottom: 30px;
   background: #f5f4fa;
+  border-radius: 4px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 70px;
+  padding-top: 25px;
+  padding-right: 100px;
+  padding-bottom: 25px;
+  padding-left: 100px;
+}
+
+.svg1::before {
   background-image: url(../images/antenna.svg);
-  background-repeat: no-repeat;
-  background-position: center;
 }
 
-.about-us-item.svg2::before {
-  display: inline-block;
-  content: "";
-  width: 270px;
-  height: 120px;
-  background: #f5f4fa;
+.svg2::before {
   background-image: url(../images/clock.svg);
-  background-repeat: no-repeat;
-  background-position: center;
-  margin-bottom: 30px;
 }
 
-.about-us-item.svg3::before {
-  display: inline-block;
-  content: "";
-  width: 270px;
-  height: 120px;
-  background: #f5f4fa;
+.svg3::before {
   background-image: url(../images/diagram.svg);
-  background-repeat: no-repeat;
-  background-position: center;
-  margin-bottom: 30px;
 }
 
-.about-us-item.svg4::before {
-  display: inline-block;
-  content: "";
-  width: 270px;
-  height: 120px;
-  background: #f5f4fa;
+.svg4::before {
   background-image: url(../images/astronaut.svg);
-  background-repeat: no-repeat;
-  background-position: center;
-  margin-bottom: 30px;
+}
+
+@media screen and (min-width: 768px) {
+  .about-us-list {
+    display: flex;
+    flex-wrap: wrap;
+    margin: -15px;
+  }
+  .about-us-item {
+    width: calc((100% - 4 * 15px) / 2);
+    margin: 15px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .about-us-item {
+    width: calc((100% - 8 * 15px) / 4);
+    margin: 15px;
+  }
 }
 
 /*-------------------OFFERS---------------------------*/

@@ -10,9 +10,7 @@
 .about-us {
   padding-top: 94px;
 }
-.about-us-list {
-  display: flex;
-}
+
 .about-us-title {
   font-family: $main-font;
   font-size: 14px;
@@ -20,55 +18,57 @@
   letter-spacing: 0.03em;
   text-transform: uppercase;
   margin-bottom: 10px;
+  text-align: center;
+  margin-top: 30px;
+  margin-bottom: 10px;
 }
 
-.about-us-item {
-  margin-bottom: 30px;
-  &:not(:last-child) {
-  margin-right: 30px;
+@media screen and (max-width: 767px) {
+  .about-us-item:not(:last-child) {
+    margin-bottom: 30px;
+  }
 }
-}
-.about-us-item.svg1::before {
-  display: inline-block;
+.about-us-item::before {
   content: "";
-  width: 270px;
+  display: block;
   height: 120px;
-  margin-bottom: 30px;
   background: #f5f4fa;
+  border-radius: 4px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 70px;
+  padding-top: 25px;
+  padding-right: 100px;
+  padding-bottom: 25px;
+  padding-left: 100px;
+}
+.svg1::before {
   background-image: url(../images/antenna.svg);
-  background-repeat: no-repeat;
-  background-position: center;
 }
-.about-us-item.svg2::before {
-  display: inline-block;
-  content: "";
-  width: 270px;
-  height: 120px;
-  background: #f5f4fa;
+.svg2::before {
   background-image: url(../images/clock.svg);
-  background-repeat: no-repeat;
-  background-position: center;
-  margin-bottom: 30px;
 }
-.about-us-item.svg3::before {
-  display: inline-block;
-  content: "";
-  width: 270px;
-  height: 120px;
-  background: #f5f4fa;
+.svg3::before {
   background-image: url(../images/diagram.svg);
-  background-repeat: no-repeat;
-  background-position: center;
-  margin-bottom: 30px;
 }
-.about-us-item.svg4::before {
-  display: inline-block;
-  content: "";
-  width: 270px;
-  height: 120px;
-  background: #f5f4fa;
+.svg4::before {
   background-image: url(../images/astronaut.svg);
-  background-repeat: no-repeat;
-  background-position: center;
-  margin-bottom: 30px;
+}
+@media screen and (min-width: 768px) {
+  .about-us-list {
+    display: flex;
+    flex-wrap: wrap;
+    margin: -15px;
+  }
+  .about-us-item {
+    width: calc((100% - 4 * 15px) / 2);
+    margin: 15px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .about-us-item {
+    width: calc((100% - 8 * 15px) / 4);
+    margin: 15px;
+  }
 }

@@ -507,7 +507,6 @@ header {
   .navigation {
     display: block;
   }
-@media screen and (max-width: 767px) and (max-width: 767px) {
   .navigation-list {
     text-align: center;
     margin-top: 40px;

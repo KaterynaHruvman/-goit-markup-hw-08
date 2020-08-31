@@ -238,7 +238,7 @@ header {
 
 .header-adress-mail-svg,
 .header-adress-tel-svg {
-  fill: currentcolor;
+  fill: $accent-color;
 
   @media screen and (min-width: 768px) {
     margin-right: 8px;
